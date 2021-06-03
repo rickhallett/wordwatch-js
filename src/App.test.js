@@ -64,7 +64,11 @@ describe('Wordwatch Testing Suite', () => {
       render(<TopicElement topic={data.topics[0]} />);
     });
 
-    xit('Renders the topic label text', () => {});
+    it('Renders the topic label text', () => {
+      const topic = data.topics[0];
+      const element = render(<TopicElement topic={topic} />);
+      expect(element.getByText(topic.label).innerHTML).toBe(topic.label);
+    });
 
     xit('Handles a click event via props', () => {});
   });
