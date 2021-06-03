@@ -1,12 +1,13 @@
+import '../css/components/components.header.css';
 import logo from '../logo.svg';
 
 export const Header = () => {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+    <header className="app__header">
+      <img src={logo} className="header__logo" alt="logo" />
 
       <a
-        className="App-link"
+        className="header__title"
         href="https://www.brandwatch.com/"
         target="_blank"
         rel="noopener noreferrer"
