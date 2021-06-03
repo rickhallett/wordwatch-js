@@ -1,5 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import App from './App';
+import data from './topics.json';
 
 describe('Wordwatch Testing Suite', () => {
   afterEach(cleanup);
@@ -17,15 +18,13 @@ describe('Wordwatch Testing Suite', () => {
       expect(headerTitle).toBeInTheDocument();
     });
 
-    xit('Renders with initial topic data', () => {});
+    it('Renders with initial topic data', () => {
+      const app = render(<App />);
+      const wordcloud = app.getAllByTestId('topic-element');
+      expect(wordcloud.length).toBe(data.topics.length);
+    });
 
     xit('If a topic is selected, this topic appears in the metacloud', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
   });
 
   describe('Component: WordCloud', () => {
@@ -57,10 +56,6 @@ describe('Wordwatch Testing Suite', () => {
     xit('If there are no topics, the user is meaningfully notified', () => {});
 
     xit('Renders the correct number of topics', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
   });
 
   describe('Component: TopicElement', () => {
@@ -79,25 +74,5 @@ describe('Wordwatch Testing Suite', () => {
     xit('If there is no topic selected, the component does not throw', () => {});
 
     xit('If there is no topic selected, the user is meaningfully notified', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
-
-    xit('', () => {});
   });
 });
