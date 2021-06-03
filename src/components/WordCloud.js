@@ -1,16 +1,15 @@
 import '../css/components/component.wordcloud.css';
 import { TopicElement } from './TopicElement';
 import data from '../topics.json';
-import { useState } from 'react';
 
 export const WordCloud = ({ onWordSelect, willShuffle }) => {
   const onWordSelectHandler = (topic) => {
     onWordSelect(topic);
   };
 
-  const shuffledData = willShuffle
-    ? data.topics.sort(() => Math.random() - 0.5)
-    : data.topics;
+  if (willShuffle) {
+    data.topics.sort(() => Math.random() - 0.5);
+  }
 
   return (
     <div className="wordcloud" data-testid="wordcloud">

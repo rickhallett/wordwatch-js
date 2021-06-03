@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './css/components/component.app.css';
 import './css/generic/generic.resets.css';
+import './css/elements/elements.elements.css';
 import { Header } from './components/Header';
 import { WordCloud } from './components/WordCloud';
 import { MetaCloud } from './components/MetaCloud';
