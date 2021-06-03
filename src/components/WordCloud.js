@@ -1,34 +1,14 @@
 import '../css/components/component.wordcloud.css';
+import { TopicElement } from './TopicElement';
+import data from '../topics.json';
 
 export const WordCloud = () => {
+  console.log(data.topics);
   return (
     <div className="wordcloud">
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
-      <h4>Word</h4>
+      {data.topics.map((topic, i) => (
+        <TopicElement key={topic.id} topic={topic} />
+      ))}
     </div>
   );
 };
