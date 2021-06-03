@@ -12,10 +12,12 @@
 
 .app__wordcloud-container {
   border: grey solid 1px;
+  max-width: 45vw;
 }
 
 .app__metacloud-container {
   border: grey solid 1px;
+  max-width: 45vw;
 }
 
 @keyframes App-logo-spin {

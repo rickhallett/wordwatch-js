@@ -1,0 +1,4 @@
+.wordcloud {
+  display: flex;
+  flex-wrap: wrap;
+}
