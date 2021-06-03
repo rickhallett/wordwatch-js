@@ -1,6 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
+import { MetaCloud } from './components/MetaCloud';
 import { TopicElement } from './components/TopicElement';
 import data from './topics.json';
 
@@ -26,7 +27,14 @@ describe('Wordwatch Testing Suite', () => {
       expect(wordcloud.length).toBe(data.topics.length);
     });
 
-    xit('If a topic is selected, this topic appears in the metacloud', () => {});
+    it('If a topic is selected, this topic appears in the metacloud', () => {
+      const app = render(<App />);
+      const topicElements = app.getAllByTestId('topic-element-h4');
+      const activeTopic = app.getByTestId('active-topic-label');
+      userEvent.click(topicElements[2]);
+
+      expect(activeTopic.innerHTML).toEqual(topicElements[2].innerHTML);
+    });
   });
 
   describe('Component: WordCloud', () => {
@@ -86,7 +94,10 @@ describe('Wordwatch Testing Suite', () => {
   describe('Component: MetaCloud', () => {
     afterEach(cleanup);
 
-    xit('Renders without crashing', () => {});
+    it('Renders without crashing', () => {
+      const activeTopic = data.topics[0];
+      render(<MetaCloud activeTopic={activeTopic} />);
+    });
 
     xit('If there is no topic selected, the component does not throw', () => {});
 

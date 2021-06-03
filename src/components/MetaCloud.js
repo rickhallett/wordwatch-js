@@ -4,7 +4,8 @@ export const MetaCloud = ({ activeTopic }) => {
   return (
     <div>
       <div>
-        Information on topic: <span>{activeTopic.label}</span>
+        Information on topic:{' '}
+        <span data-testid="active-topic-label">{activeTopic.label}</span>
       </div>
       <div>
         Total mentions: <span>{activeTopic.volume}</span>
