@@ -1,5 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import App from './App';
+import { TopicElement } from './components/TopicElement';
 import data from './topics.json';
 
 describe('Wordwatch Testing Suite', () => {
@@ -59,7 +60,9 @@ describe('Wordwatch Testing Suite', () => {
   });
 
   describe('Component: TopicElement', () => {
-    xit('Renders without crashing', () => {});
+    it('Renders without crashing', () => {
+      render(<TopicElement topic={data.topics[0]} />);
+    });
 
     xit('Renders the topic label text', () => {});
 

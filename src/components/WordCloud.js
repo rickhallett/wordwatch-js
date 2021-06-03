@@ -3,9 +3,8 @@ import { TopicElement } from './TopicElement';
 import data from '../topics.json';
 
 export const WordCloud = () => {
-  console.log(data.topics);
   return (
-    <div className="wordcloud">
+    <div className="wordcloud" data-testid="wordcloud">
       {data.topics.map((topic, i) => (
         <TopicElement key={topic.id} topic={topic} />
       ))}
