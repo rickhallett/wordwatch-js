@@ -3,8 +3,8 @@ import { TopicElement } from './TopicElement';
 import data from '../topics.json';
 
 export const WordCloud = ({ onWordSelect }) => {
-  const onWordSelectHandler = (e) => {
-    onWordSelect(e);
+  const onWordSelectHandler = (topic) => {
+    onWordSelect(topic);
   };
 
   return (
@@ -13,7 +13,7 @@ export const WordCloud = ({ onWordSelect }) => {
         <TopicElement
           key={topic.id}
           topic={topic}
-          onWordSelect={onWordSelectHandler}
+          onWordSelect={() => onWordSelectHandler(topic)}
         />
       ))}
     </div>
