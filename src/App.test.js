@@ -1,4 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 import { TopicElement } from './components/TopicElement';
 import data from './topics.json';
@@ -70,7 +71,16 @@ describe('Wordwatch Testing Suite', () => {
       expect(element.getByText(topic.label).innerHTML).toBe(topic.label);
     });
 
-    xit('Handles a click event via props', () => {});
+    it('Handles a click event via props', () => {
+      const topic = data.topics[0];
+      const clickSpy = jest.fn();
+      const wrapper = render(
+        <TopicElement topic={topic} onWordSelect={clickSpy} />
+      );
+      const element = wrapper.getByRole('heading');
+      userEvent.click(element);
+      expect(clickSpy).toHaveBeenCalled();
+    });
   });
 
   describe('Component: MetaCloud', () => {
