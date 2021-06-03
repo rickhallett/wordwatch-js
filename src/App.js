@@ -8,9 +8,10 @@ import data from './topics.json';
 
 function App() {
   const [activeTopic, setActiveTopic] = useState(data.topics[0]);
+  const [willShuffle, setWillShuffle] = useState(true);
 
   const onWordSelectHandler = (topic) => {
-    console.log(topic);
+    setWillShuffle(false);
     setActiveTopic(topic);
   };
 
@@ -19,7 +20,10 @@ function App() {
       <Header />
       <div className="app__main">
         <div className="app__wordcloud-container">
-          <WordCloud onWordSelect={(topic) => onWordSelectHandler(topic)} />
+          <WordCloud
+            onWordSelect={(topic) => onWordSelectHandler(topic)}
+            willShuffle={willShuffle}
+          />
         </div>
         <div className="app_metaclouud-container">
           <MetaCloud activeTopic={activeTopic} />

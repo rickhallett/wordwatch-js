@@ -3,21 +3,21 @@ import '../css/components/component.metacloud.css';
 export const MetaCloud = ({ activeTopic }) => {
   return (
     <div>
-      <p>
+      <div>
         Information on topic: <span>{activeTopic.label}</span>
-      </p>
-      <p>
+      </div>
+      <div>
         Total mentions: <span>{activeTopic.volume}</span>
-      </p>
-      <p>
+      </div>
+      <div>
         Positive mentions: <span>{activeTopic.sentiment.positive || 0}</span>
-      </p>
-      <p>
+      </div>
+      <div>
         Neutral mentions: <span>{activeTopic.sentiment.neutral || 0}</span>
-      </p>
-      <p>
+      </div>
+      <div>
         Negative mentions: <span>{activeTopic.sentiment.negative || 0}</span>
-      </p>
+      </div>
     </div>
   );
 };
