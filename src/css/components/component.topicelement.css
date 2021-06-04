@@ -1,3 +1,16 @@
 .topic-element {
-  margin: 0.5rem;
+  padding: 0.5rem 2rem;
+  display: inline;
+}
+
+.topic-element--positive {
+  color: green;
+}
+
+.topic-element--neutral {
+  color: gray;
+}
+
+.topic-element--negative {
+  color: red;
 }

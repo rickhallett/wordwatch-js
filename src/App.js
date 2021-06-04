@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './css/components/component.app.css';
 import './css/generic/generic.resets.css';
 import './css/elements/elements.elements.css';
+import './css/utilities/utilities.helpers.css';
 import { Header } from './components/Header';
 import { WordCloud } from './components/WordCloud';
 import { MetaCloud } from './components/MetaCloud';
@@ -26,7 +27,7 @@ function App() {
             willShuffle={willShuffle}
           />
         </div>
-        <div className="app_metaclouud-container">
+        <div className="app__metacloud-container">
           <MetaCloud activeTopic={activeTopic} />
         </div>
       </div>

@@ -2,22 +2,30 @@ import '../css/components/component.metacloud.css';
 
 export const MetaCloud = ({ activeTopic }) => {
   return (
-    <div>
-      <div>
-        Information on topic:{' '}
-        <span data-testid="active-topic-label">{activeTopic.label}</span>
+    <div className="metacloud">
+      <div className="metacloud__row">
+        <div>Info on topic: </div>
+        <div data-testid="active-topic-label" className="bold">
+          {activeTopic.label}
+        </div>
       </div>
-      <div>
-        Total mentions: <span>{activeTopic.volume}</span>
+      <div className="metacloud__row">
+        Total mentions: <div className="bold">{activeTopic.volume}</div>
       </div>
-      <div>
-        Positive mentions: <span>{activeTopic.sentiment.positive || 0}</span>
+      <div className="metacloud__row">
+        Positive mentions:{' '}
+        <div className="bold">{activeTopic.sentiment.positive || 0}</div>
       </div>
-      <div>
-        Neutral mentions: <span>{activeTopic.sentiment.neutral || 0}</span>
+      <div className="metacloud__row">
+        Neutral mentions:{' '}
+        <div className="bold">{activeTopic.sentiment.neutral || 0}</div>
       </div>
-      <div>
-        Negative mentions: <span>{activeTopic.sentiment.negative || 0}</span>
+      <div
+        className="
+        metacloud__row"
+      >
+        Negative mentions:{' '}
+        <div className="bold">{activeTopic.sentiment.negative || 0}</div>
       </div>
     </div>
   );

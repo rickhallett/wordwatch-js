@@ -12,7 +12,7 @@ export const Header = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h1>Wordwatch.js</h1>
+        <h1 className="header__title">Wordwatch.js</h1>
       </a>
     </header>
   );

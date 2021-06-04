@@ -59,7 +59,7 @@ export const TopicElement = ({ topic, onWordSelect }) => {
     </h6>
   );
 
-  const getHeadingElement = (topic) => {
+  const getHeadingElement = () => {
     if (topic.volume >= 50) {
       return h1;
     } else if (topic.volume >= 40 && topic.volume < 50) {
@@ -77,8 +77,17 @@ export const TopicElement = ({ topic, onWordSelect }) => {
     }
   };
 
+  const getSentimentColourClass = () => {
+    if (topic.sentimentScore > 75) return 'topic-element--positive';
+    if (topic.sentimentScore > 50) return 'topic-element--neutral';
+    if (topic.sentimentScore < 50) return 'topic-element--negative';
+  };
+
   return (
-    <div className="topic-element" data-testid="topic-element">
+    <div
+      className={`topic-element ${getSentimentColourClass()}`}
+      data-testid="topic-element"
+    >
       {getHeadingElement(topic)}
     </div>
   );
